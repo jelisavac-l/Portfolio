@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to user page repo
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PAT_TOKEN }}
+          personal_token: ${{ secrets.PAT_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
           external_repository: jelisavac-l/jelisavac-l
