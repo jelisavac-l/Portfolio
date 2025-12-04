@@ -30,4 +30,4 @@ jobs:
           github_token: ${{ secrets.PAT_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./dist
-          destination_repo: jelisavac-l/jelisavac-l
+          external_repository: jelisavac-l/jelisavac-l
