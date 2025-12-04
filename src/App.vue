@@ -38,13 +38,19 @@ import LinkSection from './components/LinkSection.vue';
 
 const projects = [
   {
+    name: 'Civisight 🏆',
+    desc: 'AI-powered civic monitoring app. Unihack 7 Top 5 🏆',
+    tech: ['Java', 'SpringBoot', 'PostgreSQL'],
+    link: 'https://github.com/Abelova-Grupa/Civisight'
+  },
+  {
     name: 'DBee Admin',
     desc: 'Visual MySQL/MariaDB database Administration and tool',
     tech: ['Java', 'JavaFX', 'JDBC'],
     link: 'https://github.com/Abelova-Grupa/DBee-Admin'
   },
   {
-    name: 'Mercypher',
+    name: 'Mercypher - WIP',
     desc: 'End-to-end encrypted chat app built with Go and Vue.js.',
     tech: ['Go','React', 'gRPC', 'REST', 'Websockets', 'E2EE'],
     link: 'https://github.com/Abelova-Grupa/Mercypher-Backend'
@@ -52,7 +58,7 @@ const projects = [
   {
     name: 'Online Chord Repository (AJT class)',
     desc: 'Web platform for sharing chord transcriptions.',
-    tech: ['SprirngBoot', 'JWT', 'REST', 'Vue.js', 'Tailwind', 'PostgreSQL'],
+    tech: ['SpringBoot', 'JWT', 'REST', 'Vue.js', 'Tailwind', 'PostgreSQL'],
     link: 'https://github.com/jelisavac-l/NJT-Backend'
   },
   {
