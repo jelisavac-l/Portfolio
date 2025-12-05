@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen overflow-hidden bg-background">
+  <div class="relative min-h-screen overflow-hidden bg-background lg:my-0 md:my-8 my-10">
     <!-- Background Blurry Lights -->
     <div class="absolute inset-0 overflow-hidden">
       <div
@@ -17,11 +17,12 @@
     <main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
       <h1 class="text-5xl font-bold text-accent mb-6">Hi, I’m Luka 👋</h1>
       <p class="text-gray-400 max-w-screen-md">
-        A fourth year software-engineering student who enjoys blending logic and creativity — 
-        from designing smooth user interfaces to writing fast, reliable backend services. And more.<br>
-        I love learning, experimenting, and bringing ideas to life through code.
+        Fourth-year software engineering student driven by the challenge of building reliable, high-performance systems. 
+        I excel at blending logical problem-solving with creativity to deliver end-to-end solutions. 
+        Passionate about learning new technologies and translating innovative ideas into efficient, clean code.
       </p>
       <LinkSection class="relative z-10 mb-10"/>
+
       <!-- Project Grid -->
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-10">
         <ProjectCard v-for="project in projects" :key="project.name" :project="project" />
@@ -38,8 +39,8 @@ import LinkSection from './components/LinkSection.vue';
 
 const projects = [
   {
-    name: 'Civisight 🏆',
-    desc: 'AI-powered civic monitoring app. Unihack 7 Top 5 🏆',
+    name: 'Civisight',
+    desc: 'AI-powered civic monitoring app. Unihack 7 Top 5 🏆!',
     tech: ['Java', 'SpringBoot', 'PostgreSQL'],
     link: 'https://github.com/Abelova-Grupa/Civisight'
   },
