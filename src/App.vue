@@ -12,23 +12,28 @@
         class="absolute top-1/2 right-1/4 w-64 h-64 bg-purple-500/30 rounded-full blur-[100px] animate-float1 animate-glow">
       </div>
     </div>
-    
+
     <!-- Content -->
     <main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
-      <h1 class="text-5xl font-bold text-accent mb-6">Hi, I’m Luka 👋</h1>
+      <h1 class="text-5xl font-bold ">Hi, I’m <span class="text-accent">Luka</span>.</h1>
+      <p class="mt-3 text-lg md:text-xl text-gray-400 tracking-wide mb-6  ">
+        Software Engineering Student
+        <span class="mx-2 text-gray-500">·</span>
+        <span class="text-accent/90">4th Year</span>
+      </p>
       <p class="text-gray-400 max-w-screen-md">
-        Fourth-year software engineering student driven by the challenge of building reliable, high-performance systems. 
-        I excel at blending logical problem-solving with creativity to deliver end-to-end solutions. 
+        Fourth-year software engineering student driven by the challenge of building reliable, high-performance systems.
+        I excel at blending logical problem-solving with creativity to deliver end-to-end solutions.
         Passionate about learning new technologies and translating innovative ideas into efficient, clean code.
       </p>
-      <LinkSection class="relative z-10 mb-10"/>
+      <LinkSection class="relative z-10 mb-6" />
 
       <!-- Project Grid -->
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-10">
         <ProjectCard v-for="project in projects" :key="project.name" :project="project" />
       </div>
 
-      
+
     </main>
   </div>
 </template>
@@ -53,7 +58,7 @@ const projects = [
   {
     name: 'Mercypher - WIP',
     desc: 'End-to-end encrypted chat app built with Go and Vue.js.',
-    tech: ['Go','React', 'gRPC', 'REST', 'Websockets', 'E2EE'],
+    tech: ['Go', 'React', 'gRPC', 'REST', 'Websockets', 'E2EE'],
     link: 'https://github.com/Abelova-Grupa/Mercypher-Backend'
   },
   {
