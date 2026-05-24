@@ -44,6 +44,12 @@ import LinkSection from './components/LinkSection.vue';
 
 const projects = [
   {
+    name: 'JERP (.NET class)',
+    desc: 'Reverse proxy and load balancer.',
+    tech: ['C#', '.NET'],
+    link: 'https://github.com/jelisavac-l/JERP'
+  },
+  {
     name: 'Civisight',
     desc: 'AI-powered civic monitoring app. Unihack 7 Top 5 🏆!',
     tech: ['Java', 'SpringBoot', 'PostgreSQL'],
@@ -51,13 +57,13 @@ const projects = [
   },
   {
     name: 'DBee Admin',
-    desc: 'Visual MySQL/MariaDB database Administration and tool',
+    desc: 'Visual MySQL/MariaDB database Administration tool.',
     tech: ['Java', 'JavaFX', 'JDBC'],
     link: 'https://github.com/Abelova-Grupa/DBee-Admin'
   },
   {
-    name: 'Mercypher - WIP',
-    desc: 'End-to-end encrypted chat app built with Go and Vue.js.',
+    name: 'Mercypher',
+    desc: 'Encrypted chat app built with Go and Vue.js.',
     tech: ['Go', 'React', 'gRPC', 'REST', 'Websockets', 'E2EE'],
     link: 'https://github.com/Abelova-Grupa/Mercypher-Backend'
   },
