@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. Change colors and the font here.
+  Each token becomes a Tailwind utility: --color-dim -> text-dim, bg-dim, ...
+*/
+@theme {
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-paper: #111110;
+  --color-ink: #d8d6cf;
+  --color-dim: #8b8980;
+  --color-accent: #d9694a;
+  --color-dot: rgb(255 255 255 / 0.09);
+}
+
+/*
+  Layout sizes. Line height and all spacing are multiples of --grid,
+  so text lines sit on the dot grid.
+*/
+:root {
+  --grid: 24px;
+  --margin-col: 168px; /* width of the left margin column (7 cells) */
+  --measure: 648px;    /* width of the text column (~72 characters) */
+}
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: var(--grid);
+    color: var(--color-ink);
+    background-image: radial-gradient(circle at 1px 1px, var(--color-dot) 1px, transparent 0);
+    background-size: var(--grid) var(--grid);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (width < 48rem) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-dim);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  a:hover {
+    text-decoration-color: var(--color-accent);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+  }
+}
+
+@layer components {
+  /* The page sheet. On desktop its left edge snaps to the dot grid. */
+  .page {
+    --page-width: calc(var(--margin-col) + var(--grid) + var(--measure));
+    position: relative;
+    max-width: var(--page-width);
+    min-height: 100dvh;
+    padding: calc(var(--grid) * 2) var(--grid);
+  }
+
+  /* The red notebook margin line. Desktop only. */
+  .margin-rule {
+    display: none;
+  }
+
+  /*
+    A row split into the margin column and the text column.
+    On phones the margin label sits on top and the text is indented one cell.
+  */
+  .man-row > :last-child {
+    padding-left: var(--grid);
+  }
+
+  @media (width >= 48rem) {
+    .page {
+      padding-inline: 0;
+      margin-left: max(calc(var(--grid) * 2), calc((100% - var(--page-width)) / 2));
+      margin-left: max(calc(var(--grid) * 2), round(down, calc((100% - var(--page-width)) / 2), var(--grid)));
+    }
+
+    .margin-rule {
+      display: block;
+      position: absolute;
+      inset-block: 0;
+      left: var(--margin-col);
+      width: 1px;
+      background-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    }
+
+    .man-row {
+      display: grid;
+      grid-template-columns: var(--margin-col) 1fr;
+      column-gap: var(--grid);
+    }
+
+    .man-row > :last-child {
+      padding-left: 0;
+    }
+  }
+}
